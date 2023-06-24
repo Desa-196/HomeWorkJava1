@@ -2,13 +2,22 @@ import java.util.Scanner;
 
 public class HomeWork{
     public static void main(String[] args) {
-        System.out.println(readIntFromConsole("Введите число N: "));
+        
+        // 1) Вычислить n-ое треугольного число (сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
+        int N = readIntFromConsole("Введите число N: ");
+        System.out.print("Сумма чисел от 1 до " + N + " равна: " + sum(N) );
+        System.out.print("Произведение чисел от 1 до " + N + " равно: " + multiplication(N) );
     }
     
-    // 1) Вычислить n-ое треугольного число (сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
-    //public static int[] sumAndMultiplication(int n) {
-     //   return new int {1,1};
-    //}
+    
+    public static int sum(int n) {
+        if(n == 1) return 1;
+        if(n > 0) return n += sum(n - 1);
+        else return n += sum(n + 1);
+    }
+    public static int multiplication(int n) {
+       return 1;
+    }
     //Функция ввода целого числа с проверкой
     public static int readIntFromConsole(String text)
     {
