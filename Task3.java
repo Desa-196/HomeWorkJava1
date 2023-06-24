@@ -7,6 +7,9 @@ public class Task3{
         float a = readIntFromConsole("Введите первое число: ");
         String operator = readOperatorFromConsole();
         float b = readIntFromConsole("Введите второе число: ");
+        while(b == 0 && operator.equals("/")){
+            b = readIntFromConsole("Нельзя делить на ноль! Повторите ввод: ");
+        }
         System.out.println("Результат вычисления "+a+operator+b+"="+math(a, b, operator));
 
     }
