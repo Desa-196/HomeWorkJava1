@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Task3{
     public static void main(String[] args) {
-        //float a = readIntFromConsole("Введите первое число: ");
+        float a = readIntFromConsole("Введите первое число: ");
         String operator = readOperatorFromConsole();
-        //float b = readIntFromConsole("Введите второе число: ");
+        float b = readIntFromConsole("Введите второе число: ");
+        System.out.println("Результат вычисления "+a+operator+b+"="+math(a, b, operator));
 
     }
 
@@ -35,5 +36,25 @@ public class Task3{
             operator = input.nextLine();
         }
         return operator;
+    }
+
+    public static float math(float a, float b, String operator) {
+        float result = 0;
+        switch (operator){
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                result = a / b;
+                break;
+
+        }
+        return result;
     }
 }
